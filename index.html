@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Senha Segura</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenedor-principal animar">
+        <!-- Botão de configuração -->
+        <button class="boton-config" id="botonConfig">
+            <i class="fas fa-cog"></i>
+        </button>
+        
+        <!-- Painel de configuração -->
+        <div class="panel-config" id="panelConfig">
+            <h3>Personalizar</h3>
+            <div class="config-opcion">
+                <label for="temaColor">Tema de cor</label>
+                <select id="temaColor">
+                    <option value="default">Padrão (Gabriel)</option>
+                    <option value="dark">Escuro</option>
+                    <option value="light">Claro</option>
+                    <option value="purple">Roxo</option>
+                </select>
+            </div>
+            <div class="config-opcion">
+                <label for="tamanoFuente">Tamanho da fonte</label>
+                <input type="range" id="tamanoFuente" min="12" max="24" value="16">
+            </div>
+            <div class="config-opcion">
+                <label for="animaciones">Animações</label>
+                <select id="animaciones">
+                    <option value="si">Ativadas</option>
+                    <option value="no">Desativadas</option>
+                </select>
+            </div>
+            <button class="btn-guardar" id="btnGuardar">Salvar Preferências</button>
+        </div>
+        
+        <!-- Cubo principal -->
+        <div class="cubo-principal">
+            <!-- Cabeçalho -->
+            <div class="cabecera">
+                <h1><i class="fas fa-lock"></i> Gerador de Senhas</h1>
+                <p>Crie senhas seguras e inquebráveis em segundos</p>
+            </div>
+            
+            <!-- Área da senha -->
+            <div class="contenedor-senha">
+                <input type="text" class="campo-senha" id="campoSenha" value="X7@k9!pL2$qW" readonly>
+                <div class="botones-senha">
+                    <button class="btn btn-generar" id="btnGenerar">
+                        <i class="fas fa-sync-alt"></i> Gerar Nova
+                    </button>
+                    <button class="btn btn-copiar" id="btnCopiar">
+                        <i class="fas fa-copy"></i> Copiar
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Seletor de comprimento -->
+            <div class="selector-longitud">
+                <h3>Comprimento da Senha</h3>
+                <div class="controles-longitud">
+                    <button class="btn-longitud" id="btnDisminuir">-</button>
+                    <div class="valor-longitud" id="valorLongitud">12</div>
+                    <button class="btn-longitud" id="btnAumentar">+</button>
+                </div>
+            </div>
+            
+            <!-- Opções de caracteres -->
+            <div class="opciones-caracteres">
+                <div class="opcion activa" data-tipo="mayusculas">
+                    <div class="punto-dourado"></div>
+                    <span class="opcion-texto">Letras Maiúsculas</span>
+                </div>
+                <div class="opcion activa" data-tipo="minusculas">
+                    <div class="punto-dourado"></div>
+                    <span class="opcion-texto">Letras Minúsculas</span>
+                </div>
+                <div class="opcion" data-tipo="numeros">
+                    <div class="punto-dourado"></div>
+                    <span class="opcion-texto">Números</span>
+                </div>
+                <div class="opcion" data-tipo="simbolos">
+                    <div class="punto-dourado"></div>
+                    <span class="opcion-texto">Símbolos</span>
+                </div>
+            </div>
+            
+            <!-- Indicador de força -->
+            <div class="indicador-fuerza">
+                <h3>Segurança da Senha</h3>
+                <div class="barra-fuerza">
+                    <div class="nivel-fuerza" id="nivelFuerza"></div>
+                </div>
+                <div class="etiquetas-fuerza">
+                    <span>Fraca</span>
+                    <span>Média</span>
+                    <span>Forte</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Rodapé -->
+        <div class="pie">
+            <p>Gerador de Senhas Seguras &copy; 2023 - Todos os direitos reservados</p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
